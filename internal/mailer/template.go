@@ -71,6 +71,30 @@ const defaultInviteMail = `<h2>You have been invited</h2>
 <p><a href="{{ .ConfirmationURL }}">Accept the invite</a></p>
 <p>Alternatively, enter the code: {{ .Token }}</p>`
 
+
+// NUEVA versión tuya:
+const defaultConfirmationMail = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirmación de Cuenta - Stark Streaming</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #121212; color: #00ffcc; padding: 40px; }
+    .box { background: #1e1e1e; padding: 2rem; border-radius: 10px; border: 1px solid #00ffcc; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>✅ Código de Verificación</h1>
+    <p>Ingresa el siguiente código en la app para confirmar tu cuenta:</p>
+    <h2 style="font-size: 32px;">{{ .Token }}</h2>
+    <p>Gracias,<br>Stark Streaming</p>
+  </div>
+</body>
+</html>`
+
+
+/*
 const defaultConfirmationMail = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +114,7 @@ const defaultConfirmationMail = `<!DOCTYPE html>
     <p>O usa este código: <strong>{{ .Token }}</strong></p>
   </div>
 </body>
-</html>`
+</html>`*/
 
 const defaultRecoveryMail = `<h2>Reset password</h2>
 
